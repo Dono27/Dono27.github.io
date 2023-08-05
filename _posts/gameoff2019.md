@@ -1,7 +1,7 @@
 ---
 title: 'Github GameOff 2019'
 excerpt: 'GameOff is an annual game jam, organized by Github on itch.io. There was a month (from November 1st to December 1st) to completely design and implement a video game, from zero to hero. The theme was "Leaps and Boundaries", but it was free to interpret what is that means. '
-coverImage: '/assets/blog/hello-world/cover.jpg'
+coverImage: ''
 date: '2020-01-18T15:35:07.322Z'
 author:
   name: Bence László
