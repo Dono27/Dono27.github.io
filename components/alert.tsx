@@ -15,7 +15,7 @@ const Alert = () => {
 				</BreadcrumbItem>
 
 				<BreadcrumbItem>
-					<BreadcrumbLink href='/test'>Test</BreadcrumbLink>
+					<BreadcrumbLink href='/blog'>Blog</BreadcrumbLink>
 				</BreadcrumbItem>
 			</Breadcrumb>
 		</Container>

@@ -1,57 +1,24 @@
-/* eslint-disable react/react-in-jsx-scope */
-import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
-import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
+import React from "react";
 import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
-import Post from "../interfaces/post";
+import Layout from "../components/layout";
+import Container from "../components/container";
 
-type Props = {
-  allPosts: Post[]
-}
+const LandingPage = () => {
+	return (    <>
+		<Layout>
+			<Head>
+				<title>{"Bence László - bencelaszlo.hu"}</title>
+			</Head>
+			<Container >
+				<div className="bg-slate-950 text-white">
+					<h1>Bence László</h1>
 
-export default function Index({ allPosts }: Props) {
-	const heroPost = allPosts[0];
-	const morePosts = allPosts.slice(1);
-	return (
-		<>
-			<Layout>
-				<Head>
-					<title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
-				</Head>
-				<Container>
-					<Intro />
-					{heroPost && (
-						<HeroPost
-							title={heroPost.title}
-							coverImage={heroPost.coverImage}
-							date={heroPost.date}
-							author={heroPost.author}
-							slug={heroPost.slug}
-							excerpt={heroPost.excerpt}
-						/>
-					)}
-					{morePosts.length > 0 && <MoreStories posts={morePosts} />}
-				</Container>
-			</Layout>
-		</>
-	);
-}
-
-export const getStaticProps = async () => {
-	const allPosts = getAllPosts([
-		"title",
-		"date",
-		"slug",
-		"author",
-		"coverImage",
-		"excerpt",
-	]);
-
-	return {
-		props: { allPosts },
-	};
+				</div>
+				<p>bencelaszlo</p>
+				<h2>Software Engineer</h2>  
+			</Container>
+		</Layout>
+	</>);
 };
+
+export default LandingPage;

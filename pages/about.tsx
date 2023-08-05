@@ -3,7 +3,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import Container from "../components/container";
 
-const LandingPage = () => {
+const AboutPage = () => {
 	return (    <>
 		<Layout>
 			<Head>
@@ -21,4 +21,4 @@ const LandingPage = () => {
 	</>);
 };
 
-export default LandingPage;
+export default AboutPage;
