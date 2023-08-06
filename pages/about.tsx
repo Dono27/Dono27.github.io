@@ -43,6 +43,7 @@ const AboutSection = ({ title, items }: AboutSectionData): JSX.Element => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+            marginBottom: '2.5rem',
         }}>
 
             <Heading as='h2' size="3xl" noOfLines={1}>{title}</Heading>
@@ -52,7 +53,7 @@ const AboutSection = ({ title, items }: AboutSectionData): JSX.Element => {
                         <Heading as='h3' size="2xl">{organisation}</Heading>
                         {positions.map(({ position, description, from, to, technologies }) => <Box sx={{
                             width: '80vw',
-                            height: '10rem',
+                            minHeight: '10rem',
                             justifyContent: 'center',
                             alignItems: 'center',
                             borderRadius: '0.625rem',
@@ -70,8 +71,10 @@ const AboutSection = ({ title, items }: AboutSectionData): JSX.Element => {
                             <Text fontSize="md">{description}</Text>
                             <Box sx={{
                                 display: 'flex',
+                                flexWrap: 'wrap',
                                 justifyContent: 'center',
-                                gap: '0.6rem'
+                                gap: '0.6rem',
+                                marginTop: '1rem',
                             }}>
                                 {technologies.map((technology) => <Badge variant="outline" colorScheme="red">{technology}</Badge>)}
                             </Box>
@@ -101,12 +104,19 @@ const sections: Array<AboutSectionData> = [
                             'TypeScript',
                             'React.js',
                             'Material UI',
+                            'Node.js',
                             'Nest.js',
                             'Express.js',
                             'Jest',
                             'HTML',
                             'CSS',
-                            'SASS'
+                            'SASS',
+                            'SQL',
+                            'PostgreSQL',
+                            'MongoDB',
+                            'GraphQL',
+                            'Git',
+                            'GitHub'
                         ],
                     }
                 ],
@@ -114,25 +124,152 @@ const sections: Array<AboutSectionData> = [
             {
                 organisation: 'One Beyond',
                 positions: [
-                    { position: 'Full-stack JavaScript Engineer', description: 'I helped ContentCal/Adobe to bring scalable, robust social media automation capabilities to Adobe Express platform for millions of users as a full-stack software engineer.', from: { year: 2021, month: 'June' }, to: { year: 2022, month: 'August' }, technologies: [] }
+                    {
+                        position: 'Full-stack JavaScript Engineer',
+                        description: 'I helped ContentCal/Adobe to bring scalable, robust social media automation capabilities to Adobe Express platform for millions of users as a full-stack software engineer.',
+                        from: { year: 2021, month: 'June' },
+                        to: { year: 2022, month: 'August' },
+                        technologies: [
+                            'JavaScript',
+                            'TypeScript',
+                            'Node.js',
+                            'Nest.JS',
+                            'Express.js',
+                            'Git',
+                            'React.js',
+                            'Redux.js',
+                            'Jest',
+                            'Github',
+                            'HTML',
+                            'CSS',
+                            'SQL',
+                            'PostgreSQL',
+                            'AWS Lambda',
+                            'Amazon CloudWatch',
+                            'Amazon DynamoDB',
+                            'Serverless',
+                            'Amazon SNS',
+                            'Amazon SQS',
+                        ] }
                 ]
             },
             {
                 organisation: 'DACHS Computing & Biosciences',
                 positions: [
-                    { position: 'Application Developer', description: 'I worked as a full-stack software engineer developing cloud-based collaboration and document management/document processing web applications for pharmaceutical companies. I gained experience in programmatic processing of XLSX and PDF documents.I worked as a full-stack software engineer developing cloud-based collaboration and document management/document processing web applications for pharmaceutical companies. I gained experience in programmatic processing of XLSX and PDF documents.', from: { year: 2019, month: 'June' }, to: { year: 2021, month: 'June' }, technologies: [] },
-                    { position: 'Application Developer Intern', description: '', from: { year: 2018, month: 'July' }, to: { year: 2019, month: 'June' }, technologies: [] }
+                    {
+                        position: 'Application Developer',
+                        description: 'I worked as a full-stack software engineer developing cloud-based collaboration and document management/document processing web applications for pharmaceutical companies. I gained experience in programmatic processing of XLSX and PDF documents.I worked as a full-stack software engineer developing cloud-based collaboration and document management/document processing web applications for pharmaceutical companies. I gained experience in programmatic processing of XLSX and PDF documents.',
+                        from: { year: 2019, month: 'June' },
+                        to: { year: 2021, month: 'June' },
+                        technologies: [
+                            'JavaScript',
+                            'Node.js',
+                            'Vue.js',
+                            'HTML',
+                            'CSS',
+                            'Git',
+                            'Jest',
+                            'C#',
+                            'ASP.NET Core',
+                            '.NET Framework',
+                            'Entity Framework',
+                            'Java',
+                            'Bitbucket',
+                            'SQL',
+                            'PostgreSQL',
+                            'AWS Serverless Application Model',
+                            'AWS Lambda',
+                            'Amazon S3',
+                            'Amazon CloudWatch',
+                            'Amazon DynamoDB'
+                        ]
+                    },
+                    {
+                        position: 'Application Developer Intern',
+                        description: '',
+                        from: { year: 2018, month: 'July' },
+                        to: { year: 2019, month: 'June' },
+                        technologies: [
+                            'JavaScript',
+                            'Node.js',
+                            'Vue.js',
+                            'HTML',
+                            'CSS',
+                            'Jest',
+                            'C#',
+                            'ASP.NET Core',
+                            '.NET Framework',
+                            'Entity Framework',
+                            'Unity 3D',
+                            'Java',
+                            'Git',
+                            'Bitbucket',
+                            'PostgreSQL',
+                            'SQL',
+                            'AWS Serverless Application Model',
+                            'AWS Lambda',
+                            'Amazon CloudWatch',
+                            'Amazon S3',
+                        ]
+                    }
                 ]
             }]
     },
-    // { title: 'Open Source Contributions', items: [] },
     {
         title: 'Education', items: [
             {
                 organisation: 'University of Miskolc',
                 positions: [
-                    { position: 'Computer Science Engineering MSc', description: 'My specialization is application development.', from: { year: 2020 }, technologies: [] },
-                    { position: 'Computer Science BSc', description: 'My specialization was modern web technologies (JavaScript, Node.JS, Express.JS, MongoDB, Bootstrap, React). Wrote my thesis work about implementing numerical methods in the Rust programming language and compare their performance with their C counterparts.My specialization was modern web technologies (JavaScript, Node.JS, Express.JS, MongoDB, Bootstrap, React). Wrote my thesis work about implementing numerical methods in the Rust programming language and compare their performance with their C counterparts.', from: { year: 2016 }, to: { year: 2019 }, technologies: [] }]
+                    {
+                        position: 'Computer Science Engineering MSc',
+                        description: 'My specialization is application development.',
+                        from: { year: 2020 },
+                        technologies: [
+                            'Node.js',
+                            'Git',
+                            'JavaScript',
+                            'GitHub',
+                            'HTML',
+                            'SQL',
+                            'CSS',
+                            'Bash',
+                            'Java',
+                            'LaTeX',
+                            'C',
+                            'CSS',
+                            'MongoDB',
+                            'Rust',
+                            'PostgreSQL',
+                            'Express.js',
+                            'Python',
+                            'Django',
+                        ],
+                    },
+                    {
+                        position: 'Computer Science BSc',
+                        description: 'My specialization was modern web technologies (JavaScript, Node.JS, Express.JS, MongoDB, Bootstrap, React). Wrote my thesis work about implementing numerical methods in the Rust programming language and compare their performance with their C counterparts.My specialization was modern web technologies (JavaScript, Node.JS, Express.JS, MongoDB, Bootstrap, React). Wrote my thesis work about implementing numerical methods in the Rust programming language and compare their performance with their C counterparts.',
+                        from: { year: 2016 },
+                        to: { year: 2019 },
+                        technologies: [
+                            'Git',
+                            'JavaScript',
+                            'ASP.NET Core',
+                            'GitHub',
+                            'HTML',
+                            'SQL',
+                            'CSS',
+                            'Bash',
+                            'Java',
+                            'LaTeX',
+                            'C',
+                            'CSS',
+                            'Rust',
+                            'Express.js',
+                            'Python',
+                            'React.js',
+                            'R',
+                        ],
+                    }]
             }
         ]
     },
@@ -142,7 +279,7 @@ const AboutPage = () => {
     return (<>
         <Layout>
             <Head>
-                <title>{"Bence László - bencelaszlo.hu"}</title>
+                <title>Bence László - bencelaszlo.hu</title>
             </Head>
             <Container >
                 <Heading as='h1' size='4xl' noOfLines={1}>
@@ -157,13 +294,44 @@ const AboutPage = () => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
+                borderRadius: '0.625rem',
+                border: '1px solid rgba(246, 211, 45, 0.59)',
+                background: 'rgba(246, 211, 45, 0.18)',
+                backdropFilter: 'blur(13px)',
+                padding: '0.5rem',
+                marginY: '1rem',
+                width: '80vw',
             }}>
                 <Heading as="h2" size="3xl">Contact</Heading>
                 <ButtonGroup>
-                    <Button>LinkedIn</Button>
-                    <Button>GitHub</Button>
-                    <Button>GitLab</Button>
-                    <Button>Email</Button>
+                    <Button sx={{
+                        borderRadius: '0.625rem',
+                        border: '1px solid rgba(246, 211, 45, 0.59)',
+                        background: 'rgba(246, 211, 45, 0.18)',
+                        backdropFilter: 'blur(13px)',
+                        padding: '0.5rem',
+                    }}>LinkedIn</Button>
+                    <Button sx={{
+                        borderRadius: '0.625rem',
+                        border: '1px solid rgba(246, 211, 45, 0.59)',
+                        background: 'rgba(246, 211, 45, 0.18)',
+                        backdropFilter: 'blur(13px)',
+                        padding: '0.5rem',
+                    }}>GitHub</Button>
+                    <Button sx={{
+                        borderRadius: '0.625rem',
+                        border: '1px solid rgba(246, 211, 45, 0.59)',
+                        background: 'rgba(246, 211, 45, 0.18)',
+                        backdropFilter: 'blur(13px)',
+                        padding: '0.5rem',
+                    }}>GitLab</Button>
+                    <Button sx={{
+                        borderRadius: '0.625rem',
+                        border: '1px solid rgba(246, 211, 45, 0.59)',
+                        background: 'rgba(246, 211, 45, 0.18)',
+                        backdropFilter: 'blur(13px)',
+                        padding: '0.5rem',
+                    }}>Email</Button>
                 </ButtonGroup>
             </Box>
         </Layout>
