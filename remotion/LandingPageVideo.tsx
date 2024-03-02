@@ -1,8 +1,7 @@
 import { AbsoluteFill, Img, staticFile, useCurrentFrame, useCurrentScale } from "remotion";
 import { config } from "./config";
 import { useMemo } from "react";
-
-const TRAIN_WIDTH = 1400;
+import { constants } from "./constants";
 
 export const LandingPageVideo = () => {
     const frame = useCurrentFrame();
@@ -15,7 +14,7 @@ export const LandingPageVideo = () => {
     } = useMemo(() => ({
       currentPlayerWidth: config.PLAYER_WIDTH * scale,
       currentPlayerHeight: config.PLAYER_HEIGHT * scale,
-      currentTrainWidth: TRAIN_WIDTH * scale,
+      currentTrainWidth: constants.TRAIN_WIDTH * scale,
     }), [scale]);
 
     const trainTranslateInPx = useMemo(() => {
