@@ -5,12 +5,12 @@ import Container from "./container";
 const Footer = () => {
 	return (
 		<footer style={{
-			height: '10vh',
-			display: 'flex',
-			width: '95%',
-			margin: 'auto',
-			justifyContent: 'center',
-			alignItems: 'center',
+			height: "10vh",
+			display: "flex",
+			width: "95%",
+			margin: "auto",
+			justifyContent: "center",
+			alignItems: "center",
 			...glassStyle,
 		}}>
 			<Container>
