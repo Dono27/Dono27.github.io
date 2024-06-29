@@ -1,7 +1,7 @@
 import markdownStyles from "./markdown-styles.module.css";
 
 type Props = {
-  content: string
+	content: string
 }
 
 const PostBody = ({ content }: Props) => {

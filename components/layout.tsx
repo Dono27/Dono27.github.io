@@ -20,7 +20,7 @@ const Layout = ({ children }: Props) => {
 			<main style={{
 				minHeight: "80vh",
 			}}>{children}</main>
-			<Footer  />
+			<Footer />
 		</Box>
 	);
 };
