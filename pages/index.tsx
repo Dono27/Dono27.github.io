@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Layout from "../components/layout";
-import Container from "../components/container";
-import { Heading } from "@chakra-ui/react";
 import { Player } from "@remotion/player";
 import { LandingPageVideo } from '../remotion/LandingPageVideo'
 import { config } from "../remotion/config";
@@ -18,11 +16,7 @@ const LandingPage = () => {
 				durationInFrames={config.VIDEO_DURATION_IN_FRAMES}
 				compositionWidth={config.PLAYER_WIDTH}
 				compositionHeight={config.PLAYER_HEIGHT}
-				style={{
-					width: "100%",
-					// minWidth: `${config.PLAYER_WIDTH / 3}px`,
-					// minHeight: `${config.PLAYER_HEIGHT / 3}px`,
-				}}
+				style={{ width: "100%" }}
 				fps={config.FPS}
 				loop
 				autoPlay

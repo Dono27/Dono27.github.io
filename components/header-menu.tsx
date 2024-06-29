@@ -2,20 +2,19 @@
 import { Box } from "@chakra-ui/react";
 import Container from "./container";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/breadcrumb";
+import { glassStyle } from "../styles/glass";
 
 const HeaderMenu = () => {
 	return (
 		<Container>
 			<Box sx={{
 				display: 'flex',
-				width: '100%',
+				width: '95%',
+				margin: 'auto',
 				height: '10vh',
 				justifyContent: 'center',
 				alignItems: 'center',
-				borderRadius: '0.625rem',
-				border: '1px solid rgba(246, 211, 45, 0.59)',
-				background: 'rgba(246, 211, 45, 0.18)',
-				backdropFilter: 'blur(13px)',
+				...glassStyle,
 			}}>
 				<Breadcrumb fontWeight='medium' fontSize='sm'>
 					<BreadcrumbItem>
