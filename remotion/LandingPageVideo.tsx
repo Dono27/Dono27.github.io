@@ -1,7 +1,6 @@
 import { AbsoluteFill, Img, staticFile, useCurrentFrame, useCurrentScale } from "remotion";
 import { config } from "./config";
 import { useMemo } from "react";
-import { constants } from "./constants";
 import { Container, Heading } from "@chakra-ui/react";
 
 export const LandingPageVideo = () => {
@@ -9,8 +8,8 @@ export const LandingPageVideo = () => {
     const scale = useCurrentScale();
 
     const trainTranslateInPx = useMemo(() => {
-      const startPosition = 0 - (constants.TRAIN_WIDTH / 2);
-      return startPosition + ((frame / config.VIDEO_DURATION_IN_FRAMES) * (config.PLAYER_WIDTH + 2 * constants.TRAIN_WIDTH));
+      const startPosition = 0 - (config.TRAIN_CONFIGURATION.WIDTH / 2);
+      return startPosition + ((frame / config.VIDEO_DURATION_IN_FRAMES) * (config.PLAYER_WIDTH + 2 * config.TRAIN_CONFIGURATION.WIDTH));
     }, [frame]);
 
     return (
@@ -37,7 +36,7 @@ export const LandingPageVideo = () => {
               zIndex,
               width,
               height,
-            } = constants.BUILDING_CONFIGURATION[index];
+            } = config.BUILDING_CONFIGURATION[index];
 
             return (<Img
               key={`building-${index}`}
@@ -49,7 +48,7 @@ export const LandingPageVideo = () => {
                 zIndex,
                 width: `${width}px`,
                 height: `${height}px`,
-                filter: `grayscale(0.8)`,
+                filter: `grayscale(${config.GRAYSCALE_FILTER})`,
               }}
             />);
           })}
@@ -59,12 +58,12 @@ export const LandingPageVideo = () => {
               src={staticFile("assets/landing-page-background/subway.png")}
               style={{
                 position: 'absolute',
-                bottom: `${100}px`,
-                left: `-${100}px`,
+                bottom: `${config.TRAIN_CONFIGURATION.START_POSITION_BOTTOM}px`,
+                left: `-${config.TRAIN_CONFIGURATION.START_POSITION_LEFT}px`,
                 transform: `translateX(${trainTranslateInPx}px)`,
-                width: `${constants.TRAIN_WIDTH}px`,
-                height: `${constants.TRAIN_HEIGHT}px`,
-                filter: `grayscale(0.8)`,
+                width: `${config.TRAIN_CONFIGURATION.WIDTH}px`,
+                height: `${config.TRAIN_CONFIGURATION.HEIGHT}px`,
+                filter: `grayscale(${config.GRAYSCALE_FILTER})`,
               }}
           />
         </AbsoluteFill>
@@ -74,9 +73,9 @@ export const LandingPageVideo = () => {
                 style={{
                   position: 'absolute',
                   bottom: '0px',
-                  width: `${1920}px`,
-                  height: `${120}px`,
-                  filter: `grayscale(0.8)`,
+                  width: `${config.BRIDGE_CONFIGURATION.WIDTH}px`,
+                  height: `${config.BRIDGE_CONFIGURATION.HEIGHT}px`,
+                  filter: `grayscale(${config.GRAYSCALE_FILTER})`,
                 }}
           />
         </AbsoluteFill>
