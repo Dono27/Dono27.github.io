@@ -1,4 +1,8 @@
 export const config = {
+    FEATURES: {
+        ABOUT: false,
+        BLOG: false,
+    },
     FPS: 30,
     PLAYER_WIDTH: 1920,
     PLAYER_HEIGHT: 1080 * 0.6,

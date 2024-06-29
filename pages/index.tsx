@@ -3,7 +3,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import { Player } from "@remotion/player";
 import { LandingPageVideo } from '../remotion/LandingPageVideo'
-import { config } from "../remotion/config";
+import { config } from "../config";
 
 const LandingPage = () => {
 	return (<>

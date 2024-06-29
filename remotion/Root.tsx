@@ -1,7 +1,7 @@
 import React from "react";
 import { Composition } from "remotion";
 import { LandingPageVideo } from "./LandingPageVideo";
-import { config } from "./config";
+import { config } from "../config";
  
 export const RemotionRoot: React.FC = () => {
   return (

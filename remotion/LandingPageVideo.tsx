@@ -1,5 +1,5 @@
 import { AbsoluteFill, Img, staticFile, useCurrentFrame, useCurrentScale } from "remotion";
-import { config } from "./config";
+import { config } from "../config";
 import { useMemo } from "react";
 import { Container, Heading } from "@chakra-ui/react";
 import { glassStyle } from "../styles/glass";
