@@ -13,7 +13,7 @@ const colors = {
 
 export const theme = extendTheme({ colors });
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
 	return (
 		<ChakraProvider theme={theme}>
 			<Component {...pageProps} />
@@ -21,4 +21,4 @@ function MyApp({ Component, pageProps }) {
 	);
 }
 
-export default MyApp;
+export default App;

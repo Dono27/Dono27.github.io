@@ -1,38 +1,19 @@
 import { AbsoluteFill, Img, staticFile, useCurrentFrame, useCurrentScale } from "remotion";
 import { config } from "../config";
 import { useMemo } from "react";
-import { Container, Heading } from "@chakra-ui/react";
-import { glassStyle } from "../styles/glass";
+import { BendoGridLayout } from "../components/bendo-grid-layout";
 
 export const LandingPageVideo = () => {
   const frame = useCurrentFrame();
 
   const trainTranslateInPx = useMemo(() => {
-    const startPosition = 0 - (config.TRAIN_CONFIGURATION.WIDTH / 2);
+    const startPosition = 0 - config.TRAIN_CONFIGURATION.WIDTH;
     return startPosition + ((frame / config.VIDEO_DURATION_IN_FRAMES) * (config.PLAYER_WIDTH + 2 * config.TRAIN_CONFIGURATION.WIDTH));
   }, [frame]);
 
   return (
-    <AbsoluteFill
-    >
-      <Container style={{
-        ...glassStyle,
-        marginTop: '2em',
-        textAlign: 'center',
-      }}>
-        <Heading as='h1' size='4xl' noOfLines={1} style={{
-          fontSize: '4em',
-          paddingTop: '1em',
-        }}>
-          Bence László
-        </Heading>
-        <p>bencelaszlo</p>
-        <h2 style={{
-          paddingBottom: '1em'
-        }}>
-          Software Engineer
-        </h2>
-      </Container>
+    <AbsoluteFill>
+      <BendoGridLayout />
       <AbsoluteFill
         style={{
           display: 'flex',

@@ -5,7 +5,7 @@ export const config = {
     },
     FPS: 30,
     PLAYER_WIDTH: 1920,
-    PLAYER_HEIGHT: 1080 * 0.6,
+    PLAYER_HEIGHT: 1080 * 0.8,
     VIDEO_DURATION_IN_FRAMES: 120,
     GRAYSCALE_FILTER: 0.8,
     TRAIN_CONFIGURATION: {
