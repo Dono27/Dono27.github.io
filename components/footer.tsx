@@ -1,4 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
+import { glassStyle } from "../styles/glass";
 import Container from "./container";
 
 const Footer = () => {
@@ -6,13 +7,11 @@ const Footer = () => {
 		<footer style={{
 			height: '10vh',
 			display: 'flex',
-			width: '100%',
+			width: '95%',
+			margin: 'auto',
 			justifyContent: 'center',
 			alignItems: 'center',
-			borderRadius: '0.625rem',
-			border: '1px solid rgba(246, 211, 45, 0.59)',
-			background: 'rgba(246, 211, 45, 0.18)',
-			backdropFilter: 'blur(13px)',
+			...glassStyle,
 		}}>
 			<Container>
 				<h3>

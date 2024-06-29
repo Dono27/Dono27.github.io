@@ -2,10 +2,10 @@ import { AbsoluteFill, Img, staticFile, useCurrentFrame, useCurrentScale } from 
 import { config } from "./config";
 import { useMemo } from "react";
 import { Container, Heading } from "@chakra-ui/react";
+import { glassStyle } from "../styles/glass";
 
 export const LandingPageVideo = () => {
     const frame = useCurrentFrame();
-    const scale = useCurrentScale();
 
     const trainTranslateInPx = useMemo(() => {
       const startPosition = 0 - (config.TRAIN_CONFIGURATION.WIDTH / 2);
@@ -15,11 +15,23 @@ export const LandingPageVideo = () => {
     return (
       <AbsoluteFill
       >
-        <Container >
-          <Heading as='h1' size='4xl' noOfLines={1}>
+        <Container style={{
+          ...glassStyle,
+          marginTop: '2em',
+          textAlign: 'center',
+        }}>
+          <Heading as='h1' size='4xl' noOfLines={1} style={{
+            fontSize: '4em',
+            paddingTop: '1em',
+          }}>
             Bence László
           </Heading>
-          <p>bencelaszlo</p><h2>Software Engineer</h2>
+          <p>bencelaszlo</p>
+          <h2 style={{
+            paddingBottom: '1em'
+          }}>
+            Software Engineer
+          </h2>
         </Container>
         <AbsoluteFill
           style={{
