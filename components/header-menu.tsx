@@ -3,18 +3,18 @@ import { Box } from "@chakra-ui/react";
 import Container from "./container";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/breadcrumb";
 import { glassStyle } from "../styles/glass";
-import { config } from "../config"
+import { config } from "../config";
 
 const HeaderMenu = () => {
 	return (
 		<Container>
 			<Box sx={{
-				display: 'flex',
-				width: '95%',
-				margin: 'auto',
-				height: '10vh',
-				justifyContent: 'center',
-				alignItems: 'center',
+				display: "flex",
+				width: "95%",
+				margin: "auto",
+				height: "10vh",
+				justifyContent: "center",
+				alignItems: "center",
 				...glassStyle,
 			}}>
 				<Breadcrumb fontWeight='medium' fontSize='sm'>

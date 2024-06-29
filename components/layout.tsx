@@ -12,13 +12,13 @@ type Props = {
 const Layout = ({ children }: Props) => {
 	return (
 		<Box sx={{
-			backgroundColor: '#000',
-			color: '#CCC',
+			backgroundColor: "#000",
+			color: "#CCC",
 		}}>
 			<Meta />
 			<HeaderMenu />
 			<main style={{
-				minHeight: '80vh',
+				minHeight: "80vh",
 			}}>{children}</main>
 			<Footer  />
 		</Box>
