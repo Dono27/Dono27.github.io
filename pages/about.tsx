@@ -49,19 +49,21 @@ const AboutSection = ({ title, items }: AboutSectionData): JSX.Element => {
 			<Heading as='h2' size="3xl" noOfLines={1}>{title}</Heading>
 			<List spacing={3}>
 				{items.map(({ organisation, positions }) => (
-					<ListItem as={Box}>
+					<ListItem as={Box} key={organisation}>
 						<Heading as='h3' size="2xl">{organisation}</Heading>
-						{positions.map(({ position, description, from, to, technologies }) => <Box sx={{
-							width: "80vw",
-							minHeight: "10rem",
-							justifyContent: "center",
-							alignItems: "center",
-							borderRadius: "0.625rem",
-							border: "1px solid rgba(246, 211, 45, 0.59)",
-							background: "rgba(246, 211, 45, 0.18)",
-							backdropFilter: "blur(13px)",
-							padding: "0.5rem",
-						}}>
+						{positions.map(({ position, description, from, to, technologies }) => <Box
+							key={position}
+							sx={{
+								width: "80vw",
+								minHeight: "10rem",
+								justifyContent: "center",
+								alignItems: "center",
+								borderRadius: "0.625rem",
+								border: "1px solid rgba(246, 211, 45, 0.59)",
+								background: "rgba(246, 211, 45, 0.18)",
+								backdropFilter: "blur(13px)",
+								padding: "0.5rem",
+							}}>
 							<Heading as='h4' size="xl">
 								{position}
 								<Badge variant='outline' colorScheme='green' sx={{ marginLeft: "2rem" }}>
@@ -76,7 +78,7 @@ const AboutSection = ({ title, items }: AboutSectionData): JSX.Element => {
 								gap: "0.6rem",
 								marginTop: "1rem",
 							}}>
-								{technologies.map((technology) => <Badge variant="outline" colorScheme="red">{technology}</Badge>)}
+								{technologies.map((technology) => <Badge key={technology} variant="outline" colorScheme="red">{technology}</Badge>)}
 							</Box>
 						</Box>)}
 					</ListItem>
@@ -288,7 +290,7 @@ const AboutPage = () => {
 				<Text as="p" size="md">bencelaszlo</Text>
 				<Heading as="p" size="md">Software Engineer</Heading>
 			</Container>
-			{sections.map((section) => <AboutSection {...section} />)}
+			{sections.map((section) => <AboutSection key={section.title} {...section} />)}
 			<Box sx={{
 				display: "flex",
 				flexDirection: "column",

@@ -1,6 +1,4 @@
 /* eslint-disable react/react-in-jsx-scope */
-import HeaderMenu from "./header-menu";
-import Footer from "./footer";
 import Meta from "./meta";
 import { Box } from "@chakra-ui/react";
 
@@ -16,11 +14,9 @@ const Layout = ({ children }: Props) => {
 			color: "#CCC",
 		}}>
 			<Meta />
-			<HeaderMenu />
 			<main style={{
-				minHeight: "80vh",
+				minHeight: "90vh",
 			}}>{children}</main>
-			<Footer />
 		</Box>
 	);
 };
