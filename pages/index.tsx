@@ -13,12 +13,6 @@ const LandingPage = () => {
 			<Head>
 				<title>{"Bence László - bencelaszlo.hu"}</title>
 			</Head>
-			<Container >
-				<Heading as='h1' size='4xl' noOfLines={1}>
-					Bence László
-				</Heading>
-				<p>bencelaszlo</p><h2>Software Engineer</h2>
-			</Container>
 			<Player
 				component={LandingPageVideo}
 				durationInFrames={config.VIDEO_DURATION_IN_FRAMES}
@@ -26,8 +20,8 @@ const LandingPage = () => {
 				compositionHeight={config.PLAYER_HEIGHT}
 				style={{
 					width: "100%",
-					minWidth: `${config.PLAYER_WIDTH / 3}px`,
-					minHeight: `${config.PLAYER_HEIGHT / 3}px`,
+					// minWidth: `${config.PLAYER_WIDTH / 3}px`,
+					// minHeight: `${config.PLAYER_HEIGHT / 3}px`,
 				}}
 				fps={config.FPS}
 				loop
