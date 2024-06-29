@@ -3,6 +3,7 @@ import { Box } from "@chakra-ui/react";
 import Container from "./container";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/breadcrumb";
 import { glassStyle } from "../styles/glass";
+import { config } from "../config"
 
 const HeaderMenu = () => {
 	return (
@@ -21,13 +22,13 @@ const HeaderMenu = () => {
 						<BreadcrumbLink href='/'>Home</BreadcrumbLink>
 					</BreadcrumbItem>
 
-					<BreadcrumbItem>
+					{config.FEATURES.ABOUT && <BreadcrumbItem>
 						<BreadcrumbLink href='/about'>About</BreadcrumbLink>
-					</BreadcrumbItem>
+					</BreadcrumbItem>}
 
-					<BreadcrumbItem>
+					{config.FEATURES.BLOG && <BreadcrumbItem>
 						<BreadcrumbLink href='/blog'>Blog</BreadcrumbLink>
-					</BreadcrumbItem>
+					</BreadcrumbItem>}
 				</Breadcrumb>
 			</Box>
 		</Container>
